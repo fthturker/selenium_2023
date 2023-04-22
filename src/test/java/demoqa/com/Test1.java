@@ -51,7 +51,18 @@ public class Test1 {
 
         String homeCheckboxCssValue="label[for='tree-node-home'] span.rct-checkbox svg";
         WebElement homecheckBox=driver.findElement(By.cssSelector(homeCheckboxCssValue));
+        homecheckBox.click();
 
-        driver.close();
+        homecheckBox=driver.findElement(By.cssSelector(homeCheckboxCssValue));
+
+        String homecheckBoxClassname=homecheckBox.getAttribute("class");
+
+        if (homecheckBoxClassname.equals("rct-icon rct-icon-check")){
+            System.out.println("checkbox is checked!");
+        }else{
+            System.out.println("checkbox is unchecked!");
+        }
+
+        //driver.close();
     }
 }
